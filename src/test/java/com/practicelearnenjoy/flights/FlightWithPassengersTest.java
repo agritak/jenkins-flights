@@ -14,9 +14,11 @@ class FlightWithPassengersTest {
 
         assertTrue(flight.addPassenger(passenger));
         assertEquals(1, flight.getNumberOfPassengers());
+        assertEquals(flight, passenger.getFlight());
 
         assertTrue(flight.removePassenger(passenger));
         assertEquals(0, flight.getNumberOfPassengers());
+        assertNull(passenger.getFlight());
     }
 
     @Test
